@@ -7,7 +7,7 @@
     "watch": "esbuild scripts/site.advanced.ts --bundle --sourcemap --outfile=./scripts/site.advanced.js --platform=browser --target=es2017 --watch"
   },
   "devDependencies": {
-    "esbuild": "^0.18.0",
+    "esbuild": "^0.25.0",
     "typescript": "^5.0.0"
   }
 }
