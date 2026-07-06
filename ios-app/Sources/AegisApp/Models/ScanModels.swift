@@ -9,27 +9,17 @@ enum Severity: String, Codable, Hashable {
     
     var color: Color {
         switch self {
-        case .low: return Color(UIColor { traits in
-            traits.userInterfaceStyle == .dark ? Color(red: 0.188, green: 0.690, blue: 0.753) : Color(red: 0.204, green: 0.784, blue: 0.349)
-        })
-        case .medium: return Color(red: 1.0, green: 0.596, blue: 0.0)
-        case .high: return Color(UIColor { traits in
-            traits.userInterfaceStyle == .dark ? Color(red: 1.0, green: 0.271, blue: 0.227) : Color(red: 1.0, green: 0.235, blue: 0.188)
-        })
+        case .low: return Color.aegisSuccess
+        case .medium: return Color.aegisWarning
+        case .high: return Color.aegisDanger
         }
     }
     
     var backgroundColor: Color {
         switch self {
-        case .low: return Color(UIColor { traits in
-            traits.userInterfaceStyle == .dark ? Color(red: 0.051, green: 0.180, blue: 0.180) : Color(red: 0.882, green: 0.961, blue: 0.882)
-        })
-        case .medium: return Color(UIColor { traits in
-            traits.userInterfaceStyle == .dark ? Color(red: 0.169, green: 0.133, blue: 0.0) : Color(red: 1.0, green: 0.953, blue: 0.878)
-        })
-        case .high: return Color(UIColor { traits in
-            traits.userInterfaceStyle == .dark ? Color(red: 0.173, green: 0.067, blue: 0.082) : Color(red: 1.0, green: 0.902, blue: 0.882)
-        })
+        case .low: return Color.aegisSuccessLight
+        case .medium: return Color.aegisWarningLight
+        case .high: return Color.aegisDangerLight
         }
     }
     
