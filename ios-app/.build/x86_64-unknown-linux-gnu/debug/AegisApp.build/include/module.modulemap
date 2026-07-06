@@ -1,0 +1,3 @@
+module AegisApp {
+    header "/home/runner/work/aegis/aegis/ios-app/.build/x86_64-unknown-linux-gnu/debug/AegisApp.build/include/AegisApp-Swift.h"
+}
