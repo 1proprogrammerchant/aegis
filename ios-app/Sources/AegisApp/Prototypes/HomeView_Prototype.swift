@@ -1,6 +1,10 @@
 import SwiftUI
 
-struct HomeView: View {
+// NOTE: This prototype has been moved to Views/HomeView.swift
+// Please use EnhancedHomeView from that location instead.
+// This file is kept for reference only.
+
+struct HomeView_Deprecated: View {
     @State private var scanning = false
     @State private var results: [ScanResult] = []
 
@@ -47,39 +51,26 @@ struct HomeView: View {
         // Prototype: simulate results then stop
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.results = [
-                ScanResult(id: UUID(), title: "suspicious_file.pdf", detail: "Matched rule 'suspicious_pdf'", severity: .high),
-                ScanResult(id: UUID(), title: "advert.png", detail: "Low-risk tracker data", severity: .low)
+                ScanResult_Deprecated(id: UUID(), title: "suspicious_file.pdf", detail: "Matched rule 'suspicious_pdf'", severity: .high),
+                ScanResult_Deprecated(id: UUID(), title: "advert.png", detail: "Low-risk tracker data", severity: .low)
             ]
             scanning = false
         }
     }
 }
 
-struct ScanResult: Identifiable {
+struct ScanResult_Deprecated: Identifiable {
     let id: UUID
     let title: String
     let detail: String
     let severity: Severity
 }
 
-enum Severity: String {
-    case low = "Low"
-    case medium = "Medium"
-    case high = "High"
-
-    var color: Color {
-        switch self {
-        case .low: return .green
-        case .medium: return .orange
-        case .high: return .red
-        }
-    }
-}
-
 #if DEBUG
-struct HomeView_Previews: PreviewProvider {
+struct HomeView_Deprecated_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView_Deprecated()
     }
 }
 #endif
+
